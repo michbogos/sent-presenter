@@ -1,6 +1,6 @@
 {
   "name": "sent",
-  "homepage": "https://michbogos.github.io" ,
+"homepage": "http://michbogos.github.io/sent-presenter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
