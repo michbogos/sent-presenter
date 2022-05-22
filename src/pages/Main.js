@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from "react"
-import "./App.css"
+import "../App.css"
 import { Link } from "react-router-dom";
 function Main() {
 
@@ -63,7 +63,6 @@ function Main() {
             <input id = "input" type="file" multiple="multiple"></input>
           </form>
           <button id = "start" onClick={start}>Start presentation</button>
-          <Link to="/sent-presenter/settings">Settings</Link>
         </div>
       )
     }
