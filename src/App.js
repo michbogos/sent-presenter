@@ -31,7 +31,7 @@ function App() {
           images.push(files[i])
         }
         if(files[i].type === "text/plain"){
-          files[i].text().then((res)=>{consol.log(res);make_presentation(res.split("\n"), images, 0)})
+          files[i].text().then((res)=>{res.replace("\r\n", "\n");make_presentation(res.split("\n"), images, 0)})
         }
       }
     }
