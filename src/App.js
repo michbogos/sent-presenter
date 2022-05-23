@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from "react"
 import "./App.css"
 import { Link } from "react-router-dom";
-function Main() {
+function App() {
 
     const [isPresenting, setIsPresenting] = useState(false)
     const [slide, setSlide] = useState(1)
@@ -31,7 +31,7 @@ function Main() {
           images.push(files[i])
         }
         if(files[i].type === "text/plain"){
-          files[i].text().then((res)=>{make_presentation(res.split("\n"), images, 0)})
+          files[i].text().then((res)=>{consol.log(res);make_presentation(res.split("\n"), images, 0)})
         }
       }
     }
@@ -41,6 +41,7 @@ function Main() {
       let img_names = images.map((img)=>{return img.name})
       let children = []
       for(let i = 0; i < instructions.length; i++){
+        console.log(instructions[i])
         if(instructions[i][0] === "@"){
           children.push(<img src = {URL.createObjectURL(images[img_names.indexOf(instructions[i].substring(1, instructions[i].length))])} />)
         }
@@ -72,4 +73,4 @@ function Main() {
     }
   }
   
-  export default Main;
+  export default App;
